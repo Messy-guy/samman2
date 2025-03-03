@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart' show BlocListener;
 import 'package:samman2/Common/helper/Navigation/Navigation.dart';
 import 'package:samman2/Core/configs/assets/app_images.dart';
 import 'package:samman2/presentation/Auth/Pages/SignIn.dart';
-import 'package:samman2/presentation/Auth/Pages/SignUp.dart' show Signup;
+import 'package:samman2/presentation/Auth/Pages/SignUp.dart' show SignUp, Signup;
 
 import '../Bloc/splash_cubit.dart'
     show Authenticated, SplashCubit, SplashState, Unauthenticated;
@@ -45,7 +45,8 @@ class _SplashScreenState extends State<SplashScreen> {
             AppNavigator.pushReplacement(context, Signin());
           }
           if(state is Unauthenticated){
-           AppNavigator.pushAndRemove(context, Signup());
+           AppNavigator.pushAndRemove(context,SignUp
+             ());
           }
         },
         child: Container(

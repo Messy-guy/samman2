@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:samman2/presentation/Auth/Pages/RadioBUTTONBLOC/radiobutton_cubit.dart' show RadioButtonCubit;
 import 'package:samman2/presentation/Auth/Pages/passwordvisible/ispasswordvisible__cubit.dart' show IspasswordvisibleCubit;
 import 'package:samman2/presentation/splashScreen/Bloc/splash_cubit.dart';
 import 'package:samman2/presentation/splashScreen/ui/splash.dart';
+
+import 'presentation/Auth/Pages/checkboxbloc/checkbox_cubit.dart' show CheckboxCubit;
 
 
 void main() {
@@ -18,6 +21,9 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => SplashCubit()..appstarted()),
         BlocProvider(create: (context) => IspasswordvisibleCubit()),
+        BlocProvider(create: (context) => RadioButtonCubit()),
+        BlocProvider(create: (context) => CheckboxCubit()),
+
       ],
       child: MaterialApp(
         theme: ThemeData(

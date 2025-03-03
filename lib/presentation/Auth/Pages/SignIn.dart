@@ -1,6 +1,9 @@
+import 'package:flutter/gestures.dart' show TapGestureRecognizer;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart' show BlocBuilder, ReadContext;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart' show FaIcon, FontAwesomeIcons;
+import 'package:samman2/Common/helper/Navigation/Navigation.dart';
+import 'package:samman2/presentation/Auth/Pages/SignUp.dart' show SignUp;
 import 'package:samman2/presentation/Auth/Pages/passwordvisible/ispasswordvisible__cubit.dart';
 
 class Signin extends StatefulWidget {
@@ -57,6 +60,9 @@ class _SigninState extends State<Signin> {
                               ),
                               TextSpan(
                                 text: "Sign Up",
+                                recognizer:TapGestureRecognizer()..onTap = (){
+    AppNavigator.push(context, SignUp());
+    },
                               )
                             ]
                         )
